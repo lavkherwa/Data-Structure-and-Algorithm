@@ -13,24 +13,27 @@ public class Main {
 		myLinkedList.add("end3");
 		myLinkedList.add("end4");
 
-		System.out.println("--------------Initial Linked List state---------------------\n");
+		System.out.println("--------------Initial Linked List state------------------------------\n");
 		myLinkedList.printList();
 
-		System.out.println("\n--------------Q2. Middle of Linked List-------------------------------\n");
+		System.out.println("\n--------------Q1. Middle of Linked List----------------------------\n");
 		myLinkedList.middleOfLinkedList();
 
 		// System.out.println(ll.getHead().data.toString());
 		myLinkedList.delete(myLinkedList.getHead().next);
 
 		// System.out.println(ll.getHead().next.data.toString());
-		System.out.println("\n--------------After delete 2nd element--------------------\n");
+		System.out.println("\n--------------After delete 2nd element------------------------------\n");
 		myLinkedList.printList();
 
-		System.out.println("\n--------------Q1. Reverse Linked List-------------------------------\n");
+		System.out.println("\n--------------Q2. Reverse Linked List-------------------------------\n");
 		myLinkedList.reverse();
 		myLinkedList.printList();
 
-		System.out.println("\n--------------Q3. Linked List Contains loop-------------------------------\n");
+		System.out.println("\n--------------Q3. Linked List Contains loop-------------------------\n");
 		System.out.println(myLinkedList.doesLoopExists());
+
+		System.out.println("\n--------------Q4. Nth element from last-----------------------------\n");
+		myLinkedList.nthElementFromLast(2);
 	}
 }

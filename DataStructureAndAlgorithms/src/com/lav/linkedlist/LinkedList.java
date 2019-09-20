@@ -82,7 +82,26 @@ public class LinkedList {
 
 	}
 
-	/* Q1. Reverse a linked list */
+	/* Q1. Find middle of linked list */
+	public void middleOfLinkedList() {
+
+		if (head == null) {
+			System.err.println("0");
+			return;
+		}
+
+		Node fast_2x = head;
+		Node normal_1x = head;
+		while (fast_2x != null && fast_2x.next != null) {
+			fast_2x = fast_2x.next.next;
+			normal_1x = normal_1x.next;
+		}
+
+		System.out.println(normal_1x.data);
+
+	}
+
+	/* Q2. Reverse a linked list */
 	public void reverse() {
 
 		if (head == null) {
@@ -107,25 +126,6 @@ public class LinkedList {
 
 	}
 
-	/* Q2. Find middle of linked list */
-	public void middleOfLinkedList() {
-
-		if (head == null) {
-			System.err.println("0");
-			return;
-		}
-
-		Node fast_2x = head;
-		Node normal_1x = head;
-		while (fast_2x != null && fast_2x.next != null) {
-			fast_2x = fast_2x.next.next;
-			normal_1x = normal_1x.next;
-		}
-
-		System.out.println(normal_1x.data);
-
-	}
-
 	/* Q3. Find if linked list contain loops */
 	public boolean doesLoopExists() {
 
@@ -146,6 +146,32 @@ public class LinkedList {
 		}
 
 		return false;
+	}
+
+	/* Q4. nth element from last of linked list */
+	public void nthElementFromLast(int n) {
+
+		/* length of linked list */
+		Node temp = head;
+		int length = 0;
+		if (head != null) {
+			while (temp.next != null) {
+				temp = temp.next;
+				length++;
+			}
+		}
+
+		/* Check if length is less than nth element */
+		if (length < n)
+			return;
+
+		/* find the nth element value */
+		temp = head;
+		for (int i = 0; i < length - n + 1; i++)
+			temp = temp.next;
+
+		System.out.println(temp.data);
+
 	}
 
 }
