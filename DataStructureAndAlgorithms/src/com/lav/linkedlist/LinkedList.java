@@ -126,4 +126,26 @@ public class LinkedList {
 
 	}
 
+	/* Q3. Find if linked list contain loops */
+	public boolean doesLoopExists() {
+
+		if (head == null) {
+			return false;
+		}
+
+		Node fast_2x = head;
+		Node normal_1x = head;
+		while (fast_2x != null && fast_2x.next != null) {
+			fast_2x = fast_2x.next.next;
+			normal_1x = normal_1x.next;
+
+			// If collision happens means loop exists
+			if (fast_2x == normal_1x) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 }
