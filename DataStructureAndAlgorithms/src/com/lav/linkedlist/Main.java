@@ -13,6 +13,8 @@ public class Main {
 		myLinkedList.add("end3");
 		myLinkedList.add("end4");
 
+		System.out.println("Size of linked list is: " + myLinkedList.size() + "\n");
+
 		System.out.println("--------------Initial Linked List state------------------------------\n");
 		myLinkedList.printList();
 
@@ -35,5 +37,6 @@ public class Main {
 
 		System.out.println("\n--------------Q4. Nth element from last-----------------------------\n");
 		myLinkedList.nthElementFromLast(2);
+
 	}
 }

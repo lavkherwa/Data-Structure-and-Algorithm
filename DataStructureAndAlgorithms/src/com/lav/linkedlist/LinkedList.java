@@ -82,6 +82,23 @@ public class LinkedList {
 
 	}
 
+	public int size() {
+
+		if (head == null) {
+			return 0;
+		}
+
+		Node temp = head;
+		int size = 0;
+		while (temp != null) {
+			temp = temp.next;
+			size++;
+		}
+
+		return size;
+
+	}
+
 	/* Q1. Find middle of linked list */
 	public void middleOfLinkedList() {
 
