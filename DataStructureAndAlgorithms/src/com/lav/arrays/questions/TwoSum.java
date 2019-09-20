@@ -1,9 +1,7 @@
-package com.lav.linkedlist.questions;
+package com.lav.arrays.questions;
 
 /* Assume there is only one combination in the array 
  * with the sum which equals to target
- * 
- * 
  */
 
 public class TwoSum {
