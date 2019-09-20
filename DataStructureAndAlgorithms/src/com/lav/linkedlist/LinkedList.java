@@ -71,6 +71,18 @@ public class LinkedList {
 		}
 	}
 
+	public void printList() {
+
+		Node iterator = head;
+
+		while (iterator != null) {
+			System.out.println(iterator.data);
+			iterator = iterator.next;
+		}
+
+	}
+
+	/* Q1. Reverse a linked list */
 	public void reverse() {
 
 		if (head == null) {
@@ -95,14 +107,22 @@ public class LinkedList {
 
 	}
 
-	public void printList() {
+	/* Q2. Find middle of linked list */
+	public void middleOfLinkedList() {
 
-		Node iterator = head;
-
-		while (iterator != null) {
-			System.out.println(iterator.data);
-			iterator = iterator.next;
+		if (head == null) {
+			System.err.println("0");
+			return;
 		}
+
+		Node fast_2x = head;
+		Node normal_1x = head;
+		while (fast_2x != null && fast_2x.next != null) {
+			fast_2x = fast_2x.next.next;
+			normal_1x = normal_1x.next;
+		}
+
+		System.out.println(normal_1x.data);
 
 	}
 
