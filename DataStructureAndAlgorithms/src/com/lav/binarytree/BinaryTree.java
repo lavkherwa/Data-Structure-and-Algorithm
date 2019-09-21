@@ -2,6 +2,7 @@ package com.lav.binarytree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /*- Traversals
  * 
@@ -12,7 +13,6 @@ import java.util.List;
  *    
  *  2. BFT Breath first traversal
  *     a. Level order traversal
- * 
  * 
  * */
 
@@ -60,7 +60,34 @@ public class BinaryTree {
 			}
 		}
 
+		public static void inOrderTraversalIterative(TreeNode root) {
+
+			if (root == null) {
+				return;
+			} else {
+
+				Stack<TreeNode> stack = new Stack<>();
+
+				TreeNode node = root;
+				while (node != null || stack.size() > 0) {
+
+					if (node != null) {
+						/* keep adding elements from left */
+						stack.add(node);
+						node = node.left;
+					} else {
+						/* when there is no node left then pop and show */
+						node = stack.pop();
+						System.out.print(node.data + " ");
+						/* traverse right */
+						node = node.right;
+					}
+				}
+			}
+		}
+
 		public static void levelOrderTraversal(TreeNode root) {
+
 			if (root == null) {
 				return;
 			} else {
@@ -92,7 +119,6 @@ public class BinaryTree {
 					System.out.println();
 				}
 			}
-
 		}
 
 	}

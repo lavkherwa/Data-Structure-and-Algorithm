@@ -12,16 +12,19 @@ public class Main {
 		root.left.left = new TreeNode("4");
 		root.left.right = new TreeNode("5");
 
-		System.out.println("\npre order result:");
+		System.out.println("\npre order recursive result:");
 		TraversalUtil.preOrderTraversal(root);
 
-		System.out.println("\n\nin order result:");
+		System.out.println("\n\nin order recursive result:");
 		TraversalUtil.inOrderTraversal(root);
 
-		System.out.println("\n\npost order result:");
+		System.out.println("\n\nin order iterative result:");
+		TraversalUtil.inOrderTraversalIterative(root);
+
+		System.out.println("\n\npost order recursive result:");
 		TraversalUtil.postOrderTraversal(root);
-		
-		System.out.println("\n\nlevel order result:");
+
+		System.out.println("\n\nlevel order recursive result:");
 		TraversalUtil.levelOrderTraversal(root);
 	}
 
