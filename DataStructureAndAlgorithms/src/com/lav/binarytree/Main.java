@@ -20,6 +20,9 @@ public class Main {
 
 		System.out.println("\npost order result:");
 		TraversalUtil.postOrderTraversal(root);
+		
+		System.out.println("\nlevel order result:");
+		TraversalUtil.levelOrderTraversal(root);
 	}
 
 }
