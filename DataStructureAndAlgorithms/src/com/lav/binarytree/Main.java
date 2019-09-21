@@ -15,13 +15,13 @@ public class Main {
 		System.out.println("\npre order result:");
 		TraversalUtil.preOrderTraversal(root);
 
-		System.out.println("\nin order result:");
+		System.out.println("\n\nin order result:");
 		TraversalUtil.inOrderTraversal(root);
 
-		System.out.println("\npost order result:");
+		System.out.println("\n\npost order result:");
 		TraversalUtil.postOrderTraversal(root);
 		
-		System.out.println("\nlevel order result:");
+		System.out.println("\n\nlevel order result:");
 		TraversalUtil.levelOrderTraversal(root);
 	}
 
