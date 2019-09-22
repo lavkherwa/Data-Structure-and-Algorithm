@@ -60,6 +60,35 @@ public class BinaryTree {
 			}
 		}
 
+		public static void preOrderTraversalIterative(TreeNode root) {
+			// root->left->right
+			if (root == null) {
+				return;
+			} else {
+				/*- NOTE: Main difference between pre and in order traversal iterative
+				 * 
+				 * inOrder - print while pop
+				 * preOrder - print while add
+				 * 
+				 */
+				Stack<TreeNode> stack = new Stack<>();
+
+				TreeNode node = root;
+
+				while (node != null || stack.size() > 0) {
+					if (node != null) {
+						stack.add(node); /* keep adding elements from left */
+						System.out.print(node.data + " ");
+						node = node.left; /* traverse left */
+					} else {
+						/* when there is no node left then pop and show */
+						node = stack.pop();
+						node = node.right; /* traverse right */
+					}
+				}
+			}
+		}
+
 		public static void inOrderTraversalIterative(TreeNode root) {
 			// left->root->right
 			if (root == null) {
@@ -90,31 +119,34 @@ public class BinaryTree {
 			}
 		}
 
-		public static void preOrderTraversalIterative(TreeNode root) {
-			// root->left->right
+		public static void postOrderTraversalIterative(TreeNode root) {
+			// left->right->root
 			if (root == null) {
 				return;
 			} else {
-				/*- NOTE: Main difference between pre and in order traversal iterative
-				 * 
-				 * inOrder - print while pop
-				 * preOrder - print while add
-				 * 
-				 */
+				/* Same as preOrder, but here traverse right first and then left */
 				Stack<TreeNode> stack = new Stack<>();
+				Stack<TreeNode> result = new Stack<>();
 
 				TreeNode node = root;
 
 				while (node != null || stack.size() > 0) {
 					if (node != null) {
 						stack.add(node); /* keep adding elements from left */
-						System.out.print(node.data + " ");
-						node = node.left; /* traverse left */
-					} else {
-						/* when there is no node left then pop and show */
-						node = stack.pop();
+
+						result.add(node); /* keep the result and later print reverse */
+						// System.out.print(node.data + " ");
 						node = node.right; /* traverse right */
+					} else {
+						/* when there is no node left then pop */
+						node = stack.pop();
+						node = node.left; /* traverse left */
 					}
+				}
+
+				while (result.size() > 0) {
+					TreeNode currentNode = result.pop();
+					System.out.print(currentNode.data + " ");
 				}
 			}
 		}

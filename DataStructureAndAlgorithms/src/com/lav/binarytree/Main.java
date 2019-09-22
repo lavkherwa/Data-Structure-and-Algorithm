@@ -27,6 +27,9 @@ public class Main {
 		System.out.println("\n\nPost order [recursive] result:");
 		TraversalUtil.postOrderTraversal(root);
 
+		System.out.println("\n\nPost order [iterative] result:");
+		TraversalUtil.postOrderTraversalIterative(root);
+
 		System.out.println("\n\nLevel order [recursive] result:");
 		TraversalUtil.levelOrderTraversal(root);
 	}
