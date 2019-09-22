@@ -27,6 +27,7 @@ public class BinaryTreeAdvance {
 		}
 
 		public static int numberOfNodesInBinaryTreeRecursive(TreeNode root) {
+			
 			/* HINT: post order traversal is useful in this case */
 			int nodeCount = 0;
 			if (root == null) {
@@ -75,6 +76,7 @@ public class BinaryTreeAdvance {
 		}
 
 		public static int noOfLeafNodesInBinaryTree(TreeNode root) {
+			
 			/* HINT: level order traversal is useful in this case */
 			int nodeCount = 0;
 			if (root == null) {
@@ -112,6 +114,7 @@ public class BinaryTreeAdvance {
 
 		public static void topViewOfBinaryTree(TreeNode root) {
 
+			/* HINT: Use vertical order traversal */
 			BinaryTreeBasics binaryTreeBasics = new BinaryTreeBasics();
 
 			if (root == null) {
@@ -148,94 +151,6 @@ public class BinaryTreeAdvance {
 				for (Integer key : result.keySet()) {
 					List<TreeNode> nodes = result.get(key);
 					System.out.print(nodes.get(0).data + " ");
-				}
-			}
-		}
-		
-		public static void leftViewOfBinaryTree(TreeNode root) {
-
-			BinaryTreeBasics binaryTreeBasics = new BinaryTreeBasics();
-
-			if (root == null) {
-				return;
-			} else {
-				List<Obj> queue = new ArrayList<>();
-				TreeMap<Integer, List<TreeNode>> result = new TreeMap<>();
-
-				/* Add root to queue and also distance */
-				queue.add(binaryTreeBasics.new Obj(root, 0));
-				while (queue.size() > 0) {
-
-					Obj element = queue.get(0);
-					queue.remove(0);
-					/* Check if already exists then update the list in map */
-					if (result.containsKey(element.distance)) {
-						result.get(element.distance).add(element.node);
-					} else {
-						List<TreeNode> list = new ArrayList<>();
-						list.add(element.node);
-						result.put(element.distance, list);
-					}
-
-					if (element.node.left != null) {
-						queue.add(binaryTreeBasics.new Obj(element.node.left, element.distance - 1));
-					}
-
-					if (element.node.right != null) {
-						queue.add(binaryTreeBasics.new Obj(element.node.right, element.distance + 1));
-					}
-				}
-
-				// Now print the keys
-				for (Integer key : result.keySet()) {
-					if(key <= 0) {
-						List<TreeNode> nodes = result.get(key);
-						System.out.print(nodes.get(0).data + " ");	
-					}
-				}
-			}
-		}
-		
-		public static void rightViewOfBinaryTree(TreeNode root) {
-
-			BinaryTreeBasics binaryTreeBasics = new BinaryTreeBasics();
-
-			if (root == null) {
-				return;
-			} else {
-				List<Obj> queue = new ArrayList<>();
-				TreeMap<Integer, List<TreeNode>> result = new TreeMap<>();
-
-				/* Add root to queue and also distance */
-				queue.add(binaryTreeBasics.new Obj(root, 0));
-				while (queue.size() > 0) {
-
-					Obj element = queue.get(0);
-					queue.remove(0);
-					/* Check if already exists then update the list in map */
-					if (result.containsKey(element.distance)) {
-						result.get(element.distance).add(element.node);
-					} else {
-						List<TreeNode> list = new ArrayList<>();
-						list.add(element.node);
-						result.put(element.distance, list);
-					}
-
-					if (element.node.left != null) {
-						queue.add(binaryTreeBasics.new Obj(element.node.left, element.distance - 1));
-					}
-
-					if (element.node.right != null) {
-						queue.add(binaryTreeBasics.new Obj(element.node.right, element.distance + 1));
-					}
-				}
-
-				// Now print the keys
-				for (Integer key : result.keySet()) {
-					if(key >= 0) {
-						List<TreeNode> nodes = result.get(key);
-						System.out.print(nodes.get(0).data + " ");	
-					}
 				}
 			}
 		}
