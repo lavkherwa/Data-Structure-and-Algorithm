@@ -61,26 +61,59 @@ public class BinaryTree {
 		}
 
 		public static void inOrderTraversalIterative(TreeNode root) {
-
+			// left->root->right
 			if (root == null) {
 				return;
 			} else {
 
+				/*- NOTE: Main difference between pre and in order traversal iterative
+				 * 
+				 * inOrder - print while pop
+				 * preOrder - print while add
+				 * 
+				 */
 				Stack<TreeNode> stack = new Stack<>();
 
 				TreeNode node = root;
-				while (node != null || stack.size() > 0) {
 
+				while (node != null || stack.size() > 0) {
 					if (node != null) {
-						/* keep adding elements from left */
-						stack.add(node);
-						node = node.left;
+						stack.add(node); /* keep adding elements from left */
+						node = node.left; /* traverse left */
 					} else {
 						/* when there is no node left then pop and show */
 						node = stack.pop();
 						System.out.print(node.data + " ");
-						/* traverse right */
-						node = node.right;
+						node = node.right; /* traverse right */
+					}
+				}
+			}
+		}
+
+		public static void preOrderTraversalIterative(TreeNode root) {
+			// root->left->right
+			if (root == null) {
+				return;
+			} else {
+				/*- NOTE: Main difference between pre and in order traversal iterative
+				 * 
+				 * inOrder - print while pop
+				 * preOrder - print while add
+				 * 
+				 */
+				Stack<TreeNode> stack = new Stack<>();
+
+				TreeNode node = root;
+
+				while (node != null || stack.size() > 0) {
+					if (node != null) {
+						stack.add(node); /* keep adding elements from left */
+						System.out.print(node.data + " ");
+						node = node.left; /* traverse left */
+					} else {
+						/* when there is no node left then pop and show */
+						node = stack.pop();
+						node = node.right; /* traverse right */
 					}
 				}
 			}
@@ -94,7 +127,7 @@ public class BinaryTree {
 
 				List<TreeNode> queue = new ArrayList<>();
 
-				/* Keep adding children */
+				/* Add root to queue and then keep adding children */
 				queue.add(root);
 
 				while (queue.size() > 0) {
@@ -120,7 +153,6 @@ public class BinaryTree {
 				}
 			}
 		}
-
 	}
 
 }
