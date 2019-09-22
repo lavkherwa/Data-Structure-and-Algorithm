@@ -13,7 +13,7 @@ public class Main {
 		root.left.left = new TreeNode("4");
 		root.left.right = new TreeNode("5");
 
-		/*----------------------BASICS-----------------------*/
+		/*----------------------BASICS--------------------------*/
 		System.out.println("\nPre order [recursive] result:");
 		TraversalUtilBasics.preOrderTraversal(root);
 
@@ -34,9 +34,11 @@ public class Main {
 
 		System.out.println("\n\nLevel order [recursive] result:");
 		TraversalUtilBasics.levelOrderTraversal(root);
-		/*----------------------BASICS-----------------------*/
+		/*----------------------BASICS--------------------------*/
+		
+		/////////////////////// BREAK //////////////////////////
 
-		/*----------------------ADVANCE-----------------------*/
+		/*----------------------ADVANCE-------------------------*/
 		System.out.println("\nHeight of tree is:");
 		System.out.println(TraversalUtilAdvance.heightOfBinaryTree(root));
 
@@ -46,7 +48,7 @@ public class Main {
 		System.out.println("\nNumber of nodes in given tree [iterative]:");
 		System.out.println(TraversalUtilAdvance.numberOfNodesInBinaryTreeIterative(root));
 
-		/*----------------------ADVANCE-----------------------*/
+		/*----------------------ADVANCE-------------------------*/
 	}
 
 }
