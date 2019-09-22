@@ -1,5 +1,6 @@
 package com.lav.binarytree;
 
+import com.lav.binarytree.BinaryTreeAdvance.TraversalUtilAdvance;
 import com.lav.binarytree.BinaryTreeBasics.TraversalUtilBasics;
 
 public class Main {
@@ -12,7 +13,6 @@ public class Main {
 		root.left.left = new TreeNode("4");
 		root.left.right = new TreeNode("5");
 
-		
 		/*----------------------BASICS-----------------------*/
 		System.out.println("\nPre order [recursive] result:");
 		TraversalUtilBasics.preOrderTraversal(root);
@@ -35,11 +35,17 @@ public class Main {
 		System.out.println("\n\nLevel order [recursive] result:");
 		TraversalUtilBasics.levelOrderTraversal(root);
 		/*----------------------BASICS-----------------------*/
-		
-		
-		
+
 		/*----------------------ADVANCE-----------------------*/
-		//TODO
+		System.out.println("\nHeight of tree is:");
+		System.out.println(TraversalUtilAdvance.heightOfBinaryTree(root));
+
+		System.out.println("\nNumber of nodes in given tree [recursive]:");
+		System.out.println(TraversalUtilAdvance.numberOfNodesInBinaryTreeRecursive(root));
+
+		System.out.println("\nNumber of nodes in given tree [iterative]:");
+		System.out.println(TraversalUtilAdvance.numberOfNodesInBinaryTreeIterative(root));
+
 		/*----------------------ADVANCE-----------------------*/
 	}
 
