@@ -54,6 +54,14 @@ public class Main {
 		System.out.println("\nNumber of leaf nodes in given tree [iterative]:");
 		System.out.println(TraversalUtilAdvance.noOfLeafNodesInBinaryTree(root));
 
+		System.out.println("\nTop view of given tree [iterative]:");
+		TraversalUtilAdvance.topViewOfBinaryTree(root);
+		
+		System.out.println("\n\nLeft view of given tree [iterative]:");
+		TraversalUtilAdvance.leftViewOfBinaryTree(root);
+		
+		System.out.println("\n\nRight view of given tree [iterative]:");
+		TraversalUtilAdvance.rightViewOfBinaryTree(root);
 		/*----------------------ADVANCE-------------------------*/
 	}
 
