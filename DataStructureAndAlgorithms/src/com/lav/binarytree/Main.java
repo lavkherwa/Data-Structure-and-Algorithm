@@ -14,28 +14,31 @@ public class Main {
 		root.left.right = new TreeNode("5");
 
 		/*----------------------BASICS--------------------------*/
-		System.out.println("\nPre order [recursive] result:");
+		System.out.println("\nPre order traversal [recursive] result:");
 		TraversalUtilBasics.preOrderTraversal(root);
 
-		System.out.println("\n\nPre order [iterative] result:");
+		System.out.println("\n\nPre order traversal [iterative] result:");
 		TraversalUtilBasics.preOrderTraversalIterative(root);
 
-		System.out.println("\n\nIn order [recursive] result:");
+		System.out.println("\n\nIn order traversal [recursive] result:");
 		TraversalUtilBasics.inOrderTraversal(root);
 
-		System.out.println("\n\nIn order [iterative] result:");
+		System.out.println("\n\nIn order traversal [iterative] result:");
 		TraversalUtilBasics.inOrderTraversalIterative(root);
 
-		System.out.println("\n\nPost order [recursive] result:");
+		System.out.println("\n\nPost order traversal [recursive] result:");
 		TraversalUtilBasics.postOrderTraversal(root);
 
-		System.out.println("\n\nPost order [iterative] result:");
+		System.out.println("\n\nPost order traversal [iterative] result:");
 		TraversalUtilBasics.postOrderTraversalIterative(root);
 
-		System.out.println("\n\nLevel order [recursive] result:");
+		System.out.println("\n\nLevel order traversal [recursive] result:");
 		TraversalUtilBasics.levelOrderTraversal(root);
+
+		System.out.println("\n\nVertical order traversal result:");
+		TraversalUtilBasics.verticalOrderTraversal(root);
 		/*----------------------BASICS--------------------------*/
-		
+
 		/////////////////////// BREAK //////////////////////////
 
 		/*----------------------ADVANCE-------------------------*/
@@ -47,6 +50,9 @@ public class Main {
 
 		System.out.println("\nNumber of nodes in given tree [iterative]:");
 		System.out.println(TraversalUtilAdvance.numberOfNodesInBinaryTreeIterative(root));
+
+		System.out.println("\nNumber of leaf nodes in given tree [iterative]:");
+		System.out.println(TraversalUtilAdvance.noOfLeafNodesInBinaryTree(root));
 
 		/*----------------------ADVANCE-------------------------*/
 	}

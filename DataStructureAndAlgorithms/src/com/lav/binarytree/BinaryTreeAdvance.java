@@ -71,5 +71,41 @@ public class BinaryTreeAdvance {
 			}
 		}
 
+		public static int noOfLeafNodesInBinaryTree(TreeNode root) {
+			/* HINT: level order traversal is useful in this case */
+			int nodeCount = 0;
+			if (root == null) {
+				return nodeCount;
+			} else {
+
+				List<TreeNode> queue = new ArrayList<>();
+
+				/* Add root to queue and then keep adding children */
+				queue.add(root);
+
+				while (queue.size() > 0) {
+
+					/* Take first element and remove from queue */
+					TreeNode node = queue.get(0);
+					queue.remove(0);
+
+					/* count when both left and right child are absent */
+					if (node.left == null && node.right == null) {
+						nodeCount = nodeCount + 1;
+					}
+
+					/* Add children to queue again */
+					if (node.left != null) {
+						queue.add(node.left);
+					}
+					if (node.right != null) {
+						queue.add(node.right);
+					}
+				}
+
+				return nodeCount;
+			}
+		}
+
 	}
 }

@@ -3,6 +3,7 @@ package com.lav.binarytree;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.TreeMap;
 
 /*- Traversals
  * 
@@ -13,10 +14,22 @@ import java.util.Stack;
  *    
  *  2. BFT Breath first traversal
  *     a. Level order traversal
+ *  
+ *  3. Vertical order traversal
  * 
  * */
 
 public class BinaryTreeBasics {
+
+	class Obj {
+		public TreeNode node;
+		public int distance;
+
+		public Obj(TreeNode node, int distance) {
+			this.node = node;
+			this.distance = distance;
+		}
+	}
 
 	public static class TraversalUtilBasics {
 
@@ -180,6 +193,51 @@ public class BinaryTreeBasics {
 							queue.add(node.right);
 						}
 						count--;
+					}
+					System.out.println();
+				}
+			}
+		}
+
+		public static void verticalOrderTraversal(TreeNode root) {
+
+			BinaryTreeBasics binaryTreeBasics = new BinaryTreeBasics();
+
+			if (root == null) {
+				return;
+			} else {
+				List<Obj> queue = new ArrayList<>();
+				TreeMap<Integer, List<TreeNode>> result = new TreeMap<>();
+
+				/* Add root to queue and also distance */
+				queue.add(binaryTreeBasics.new Obj(root, 0));
+				while (queue.size() > 0) {
+
+					Obj element = queue.get(0);
+					queue.remove(0);
+					/* Check if already exists then update the list in map */
+					if (result.containsKey(element.distance)) {
+						result.get(element.distance).add(element.node);
+					} else {
+						List<TreeNode> list = new ArrayList<>();
+						list.add(element.node);
+						result.put(element.distance, list);
+					}
+
+					if (element.node.left != null) {
+						queue.add(binaryTreeBasics.new Obj(element.node.left, element.distance - 1));
+					}
+
+					if (element.node.right != null) {
+						queue.add(binaryTreeBasics.new Obj(element.node.right, element.distance + 1));
+					}
+				}
+				
+				// Now print the keys
+				for (Integer key : result.keySet()) {
+					List<TreeNode> nodes = result.get(key);
+					for(TreeNode node: nodes) {
+						System.out.print(node.data + " ");
 					}
 					System.out.println();
 				}
