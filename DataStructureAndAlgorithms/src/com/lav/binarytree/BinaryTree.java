@@ -53,8 +53,8 @@ public class BinaryTree {
 				return;
 			} else {
 
-				inOrderTraversal(root.left);
-				inOrderTraversal(root.right);
+				postOrderTraversal(root.left);
+				postOrderTraversal(root.right);
 
 				System.out.print(root.data + " ");
 			}
