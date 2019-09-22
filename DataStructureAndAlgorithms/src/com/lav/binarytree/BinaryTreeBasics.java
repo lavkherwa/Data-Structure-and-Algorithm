@@ -16,9 +16,9 @@ import java.util.Stack;
  * 
  * */
 
-public class BinaryTree {
+public class BinaryTreeBasics {
 
-	public static class TraversalUtil {
+	public static class TraversalUtilBasics {
 
 		public static void preOrderTraversal(TreeNode root) {
 			// root->left->right

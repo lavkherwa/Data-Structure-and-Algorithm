@@ -1,6 +1,6 @@
 package com.lav.binarytree;
 
-import com.lav.binarytree.BinaryTree.TraversalUtil;
+import com.lav.binarytree.BinaryTreeBasics.TraversalUtilBasics;
 
 public class Main {
 
@@ -12,26 +12,35 @@ public class Main {
 		root.left.left = new TreeNode("4");
 		root.left.right = new TreeNode("5");
 
+		
+		/*----------------------BASICS-----------------------*/
 		System.out.println("\nPre order [recursive] result:");
-		TraversalUtil.preOrderTraversal(root);
+		TraversalUtilBasics.preOrderTraversal(root);
 
 		System.out.println("\n\nPre order [iterative] result:");
-		TraversalUtil.preOrderTraversalIterative(root);
+		TraversalUtilBasics.preOrderTraversalIterative(root);
 
 		System.out.println("\n\nIn order [recursive] result:");
-		TraversalUtil.inOrderTraversal(root);
+		TraversalUtilBasics.inOrderTraversal(root);
 
 		System.out.println("\n\nIn order [iterative] result:");
-		TraversalUtil.inOrderTraversalIterative(root);
+		TraversalUtilBasics.inOrderTraversalIterative(root);
 
 		System.out.println("\n\nPost order [recursive] result:");
-		TraversalUtil.postOrderTraversal(root);
+		TraversalUtilBasics.postOrderTraversal(root);
 
 		System.out.println("\n\nPost order [iterative] result:");
-		TraversalUtil.postOrderTraversalIterative(root);
+		TraversalUtilBasics.postOrderTraversalIterative(root);
 
 		System.out.println("\n\nLevel order [recursive] result:");
-		TraversalUtil.levelOrderTraversal(root);
+		TraversalUtilBasics.levelOrderTraversal(root);
+		/*----------------------BASICS-----------------------*/
+		
+		
+		
+		/*----------------------ADVANCE-----------------------*/
+		//TODO
+		/*----------------------ADVANCE-----------------------*/
 	}
 
 }
