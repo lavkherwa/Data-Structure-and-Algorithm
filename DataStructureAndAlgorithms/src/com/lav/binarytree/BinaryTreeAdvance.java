@@ -1,12 +1,10 @@
 package com.lav.binarytree;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
 
 import com.lav.binarytree.BinaryTreeBasics.Obj;
-import com.sun.javafx.collections.MappingChange.Map;
 
 public class BinaryTreeAdvance {
 
