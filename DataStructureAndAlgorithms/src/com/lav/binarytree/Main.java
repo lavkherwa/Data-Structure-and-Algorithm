@@ -42,21 +42,30 @@ public class Main {
 		/////////////////////// BREAK //////////////////////////
 
 		/*----------------------ADVANCE-------------------------*/
-		System.out.println("\nHeight of tree is:");
+		System.out.println("\n\nHeight of tree is:");
 		System.out.println(TraversalUtilAdvance.heightOfBinaryTree(root));
 
-		System.out.println("\nNumber of nodes in given tree [recursive]:");
+		System.out.println("\n\nNumber of nodes in given tree [recursive]:");
 		System.out.println(TraversalUtilAdvance.numberOfNodesInBinaryTreeRecursive(root));
 
-		System.out.println("\nNumber of nodes in given tree [iterative]:");
+		System.out.println("\n\nNumber of nodes in given tree [iterative]:");
 		System.out.println(TraversalUtilAdvance.numberOfNodesInBinaryTreeIterative(root));
 
-		System.out.println("\nNumber of leaf nodes in given tree [iterative]:");
+		System.out.println("\n\nNumber of leaf nodes in given tree [iterative]:");
 		System.out.println(TraversalUtilAdvance.noOfLeafNodesInBinaryTree(root));
 
-		System.out.println("\nTop view of given tree [iterative]:");
+		System.out.println("\n\nTop view of given tree [iterative]:");
 		TraversalUtilAdvance.topViewOfBinaryTree(root);
-		
+
+		System.out.println("\n\nBottom view of given tree [iterative]:");
+		TraversalUtilAdvance.bottomViewOfBinaryTree(root);
+
+		System.out.println("\n\nLeft view of given tree [iterative]:");
+		TraversalUtilAdvance.leftViewOfBinaryTree(root);
+
+		System.out.println("\n\nRight view of given tree [iterative]:");
+		TraversalUtilAdvance.rightViewOfBinaryTree(root);
+
 		/*----------------------ADVANCE-------------------------*/
 	}
 

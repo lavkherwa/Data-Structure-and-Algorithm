@@ -5,13 +5,13 @@ public class Main {
 	public static void main(String[] args) {
 
 		LinkedList myLinkedList = new LinkedList();
-		myLinkedList.addAtStart("start");
-		myLinkedList.add("end1");
-		myLinkedList.addAtStart("again start");
-		myLinkedList.addAtStart("again start 2");
-		myLinkedList.add("end2");
-		myLinkedList.add("end3");
-		myLinkedList.add("end4");
+		myLinkedList.addAtStart("1");
+		myLinkedList.add("2");
+		myLinkedList.addAtStart("3");
+		myLinkedList.addAtStart("4");
+		myLinkedList.add("5");
+		myLinkedList.add("6");
+		myLinkedList.add("7");
 
 		System.out.println("Size of linked list is: " + myLinkedList.size() + "\n");
 
@@ -36,7 +36,7 @@ public class Main {
 		System.out.println(myLinkedList.doesLoopExists());
 
 		System.out.println("\n--------------Q4. Nth element from last-----------------------------\n");
-		myLinkedList.nthElementFromLast(2);
+		myLinkedList.nthElementFromLast(4);
 
 	}
 }
