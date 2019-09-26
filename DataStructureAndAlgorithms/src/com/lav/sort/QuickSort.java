@@ -8,7 +8,7 @@ public class QuickSort {
 	 */
 
 	public static void main(String[] args) {
-		int[] array = { 3, 5, 7, 5, 1, 9, 2 };
+		int[] array = { 3, 5, 7, 5, 1, 9, 2, 0, 6, 1, -1, -10 };
 
 		quickSort(array, 0, array.length - 1);
 
@@ -21,10 +21,15 @@ public class QuickSort {
 	public static void quickSort(int[] array, int start, int end) {
 
 		if (start >= end) {
+			/* if the start is exceeded end then stop */
 			return;
 		} else {
+			/* do the partitioning */
 			int partitionIndex = partitioning(array, start, end);
+
+			/* sort left of partitioning */
 			quickSort(array, start, partitionIndex - 1);
+			/* sort right of partitioning */
 			quickSort(array, partitionIndex + 1, end);
 		}
 
@@ -33,10 +38,10 @@ public class QuickSort {
 	public static int partitioning(int[] array, int start, int end) {
 
 		int pivot = array[end]; // we are taking last element as pivotal
-		
-		int partitionIndex = start;
 
-		for (int i = start; i < end - 1; i++) {
+		int partitionIndex = start; // set partitioning index as start initially
+
+		for (int i = start; i < end; i++) {
 			if (array[i] <= pivot) {
 				swap(array, i, partitionIndex);
 				partitionIndex++;
