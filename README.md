@@ -8,6 +8,7 @@
 - Linked List implementation and practice questions: [Source Code Link](DataStructureAndAlgorithms/src/com/lav/linkedlist)
 - Binary Tree implementation and practice questions: [Source Code Link](DataStructureAndAlgorithms/src/com/lav/binarytree)
 - Recursion practice questions: [Source Code Link](DataStructureAndAlgorithms/src/com/lav/recursion)
+- Sorting Algorithm: [Source Code Link](DataStructureAndAlgorithms/src/com/lav/sort)
 
 **Design Patterns and Thread Handling**
 - Basic and most used design patterns: [Source Code Link](DataStructureAndAlgorithms/src/com/lav/design/pattern)
