@@ -6,7 +6,7 @@ public class InsertionSort {
 
 		int[] array = { 3, 5, 7, 5, 1, 9, 2 };
 
-		InsertionSort(array);
+		insertionSort(array);
 
 		for (int num : array) {
 			System.out.print(num + ", ");
@@ -14,12 +14,12 @@ public class InsertionSort {
 
 	}
 
-	public static void InsertionSort(int[] array) {
+	public static void insertionSort(int[] array) {
 
 		for (int i = 0; i < array.length - 1; i++) {
 
 			int minValueIndex = i;
-
+			
 			for (int j = i + 1; j < array.length; j++) {
 
 				if (array[j] < array[minValueIndex]) {
