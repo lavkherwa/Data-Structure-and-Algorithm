@@ -6,10 +6,10 @@ public class MinJumpInMatrixToReachEnd {
 
 		int matrim[][] = //
 				{ //
-						{ 5, 4, 2 }, //
-						{ 9, 2, 1 }, //
-						{ 2, 5, 9 }, //
-						{ 1, 3, 11 } // 4*3 matrim
+						{ 5, 4, 2, 2 }, //
+						{ 9, 2, 1, 8 }, //
+						{ 2, 5, 9, 11 }, //
+						{ 1, 3, 1, 6 } // 4*4 matrix
 				};
 
 		System.out.println("Min jump is: " + minJumpToReachEnd(matrim, 0, 0));
@@ -18,7 +18,7 @@ public class MinJumpInMatrixToReachEnd {
 
 	public static int minJumpToReachEnd(int[][] matrim, int m, int n) {
 		// base case
-		if (m == 4 - 1 && n == 3 - 1)
+		if (m == 4 - 1 && n == 4 - 1)
 			return 0;
 
 		/* find minimum through diagnol */
@@ -39,12 +39,12 @@ public class MinJumpInMatrixToReachEnd {
 		if (isValid(m, n + 1))
 			right = minJumpToReachEnd(matrim, m, n + 1) + Math.abs(matrim[m][n] - matrim[m][n + 1]);
 
-		// return minimum jumps
+		// return minimum
 		return Math.min(down, Math.min(right, diag));
 	}
 
 	public static boolean isValid(int m, int n) {
-		return (m < 4 && n < 3);
+		return (m < 4 && n < 4);
 	};
 
 }
