@@ -80,8 +80,8 @@ public class BinaryTreeBasics {
 			} else {
 				/*- NOTE: Main difference between pre and in order traversal iterative
 				 * 
-				 * inOrder - print while pop
 				 * preOrder - print while add
+				 * inOrder - print while pop
 				 * 
 				 */
 				Stack<TreeNode> stack = new Stack<>();
