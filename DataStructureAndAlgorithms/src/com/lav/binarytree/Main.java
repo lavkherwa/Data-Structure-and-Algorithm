@@ -65,6 +65,9 @@ public class Main {
 
 		System.out.println("\n\nRight view of given tree [iterative]:");
 		TraversalUtilAdvance.rightViewOfBinaryTree(root);
+		
+		System.out.println("\n\nNodes Kth distance from reference node: ");
+		TraversalUtilAdvance.findAllNodesKthDistanceFromReferenceNode(root, root , 2);
 
 		/*----------------------ADVANCE-------------------------*/
 	}

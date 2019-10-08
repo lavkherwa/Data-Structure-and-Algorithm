@@ -1,7 +1,11 @@
 package com.lav.binarytree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import com.lav.binarytree.BinaryTreeBasics.Obj;
@@ -291,6 +295,100 @@ public class BinaryTreeAdvance {
 					System.out.println();
 				}
 			}
+		}
+
+		/* Helper Function to keep map of all parent nodes */
+		public static Map<TreeNode, TreeNode> getParentMap(TreeNode root) {
+
+			Map<TreeNode, TreeNode> result = new HashMap<>();
+			List<TreeNode> queue = new ArrayList<>();
+
+			queue.add(root);
+			result.put(root, null);
+
+			while (queue.size() > 0) {
+
+				TreeNode node = null;
+				/* Add to the map and then pop */
+				node = queue.get(0);
+				queue.remove(0);
+
+				/* Add children to queue again */
+				/* Add parent and continue with next child */
+				if (node.left != null) {
+					result.put(node.left, node);
+					queue.add(node.left);
+				}
+				if (node.right != null) {
+					result.put(node.right, node);
+					queue.add(node.right);
+				}
+
+			}
+
+			return result;
+		}
+
+		/* Find all nodes kth distance from reference node */
+		public static void findAllNodesKthDistanceFromReferenceNode(TreeNode root, TreeNode referenceNode, int k) {
+
+			Map<TreeNode, TreeNode> parentMap = getParentMap(root);
+
+			List<TreeNode> queue = new ArrayList<>();
+			Set<TreeNode> visitedNodes = new HashSet<>();
+
+			queue.add(referenceNode);
+			visitedNodes.add(referenceNode);
+
+			int level = 0;
+
+			while (queue.size() > 0 && level != k) {
+
+				int count = queue.size();
+
+				/* Process all the queue items at current level */
+				while (count > 0) {
+
+					TreeNode node = queue.get(0);
+					queue.remove(0);
+
+					/*
+					 * Evaluated not visited children and then add them to visited so that they won't
+					 * be visited again
+					 */
+					if (node.left != null && visitedNodes.contains(node.left) == false) {
+						queue.add(node.left);
+						visitedNodes.add(node.left);
+					}
+					/*
+					 * Evaluated not visited children and then add them to visited so that they won't
+					 * be visited again
+					 */
+					if (node.right != null && visitedNodes.contains(node.right) == false) {
+						queue.add(node.right);
+						visitedNodes.add(node.right);
+					}
+					/*
+					 * Evaluated not visited parent and then add them to visited so that they won't
+					 * be visited again
+					 */
+					TreeNode pNode = parentMap.get(node);
+					if (pNode != null && visitedNodes.contains(pNode) == false) {
+						queue.add(pNode);
+						visitedNodes.add(pNode);
+					}
+
+					count--;
+				}
+
+				level++;
+			}
+
+			/* Print all the items in the queue */
+			for (TreeNode resultNode : queue) {
+				System.out.print(resultNode.data + " ");
+			}
+
 		}
 	}
 }

@@ -233,7 +233,7 @@ public class BinaryTreeBasics {
 					}
 				}
 				
-				// Now print the keys
+				// Now print the values
 				for (Integer key : result.keySet()) {
 					List<TreeNode> nodes = result.get(key);
 					for(TreeNode node: nodes) {
