@@ -12,6 +12,7 @@ public class LongestCommonSequence {
 
 		int l1 = array1.length;
 		int l2 = array2.length;
+		
 
 		System.out.println("Max common sequence count is: " + findMaxSequenceCount(array1, array2, l1, l2));
 
