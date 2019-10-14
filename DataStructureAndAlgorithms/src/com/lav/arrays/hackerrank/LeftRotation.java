@@ -14,6 +14,7 @@ public class LeftRotation {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private static int[] leftRotation(int[] input, int rotationCount) {
 
 		// same number of rotation will result in same value, so we
