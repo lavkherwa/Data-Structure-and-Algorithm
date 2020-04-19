@@ -2,6 +2,8 @@ package com.lav.design.pattern.prototype;
 
 import java.io.Serializable;
 
+/* Serialize the object, so that we can make copies of it later */
+
 public class Book implements Serializable {
 
 	private static final long serialVersionUID = -5281576904220291060L;
