@@ -1,4 +1,4 @@
-package com.lav.design.pattern.prototype;
+package com.lav.design.pattern.creational.prototype;
 
 import java.io.Serializable;
 

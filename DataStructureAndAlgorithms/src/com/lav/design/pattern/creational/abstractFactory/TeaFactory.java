@@ -1,4 +1,4 @@
-package com.lav.design.pattern.abstractFactory;
+package com.lav.design.pattern.creational.abstractFactory;
 
 import java.util.ArrayList;
 import java.util.List;

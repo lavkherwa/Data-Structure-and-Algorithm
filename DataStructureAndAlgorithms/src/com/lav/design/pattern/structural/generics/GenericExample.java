@@ -1,4 +1,4 @@
-package com.lav.design.pattern.generics;
+package com.lav.design.pattern.structural.generics;
 
 public class GenericExample<T> {
 

@@ -1,4 +1,4 @@
-package com.lav.design.pattern.factory;
+package com.lav.design.pattern.creational.factory;
 
 public class Book {
 

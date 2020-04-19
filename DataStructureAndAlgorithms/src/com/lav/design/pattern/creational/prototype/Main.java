@@ -1,4 +1,4 @@
-package com.lav.design.pattern.prototype;
+package com.lav.design.pattern.creational.prototype;
 
 /*- Prototype pattern is used to work with copies (prototypes)
  *  
