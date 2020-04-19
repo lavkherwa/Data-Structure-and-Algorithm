@@ -1,4 +1,4 @@
-package com.lav.design.pattern;
+package com.lav.design.pattern.builder;
 
 import java.util.ArrayList;
 

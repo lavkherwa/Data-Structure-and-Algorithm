@@ -1,4 +1,4 @@
-package com.lav.design.pattern;
+package com.lav.design.pattern.singleton;
 
 public class Singleton {
 
