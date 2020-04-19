@@ -1,7 +1,5 @@
 package com.lav.design.pattern.prototype;
 
-import org.apache.commons.lang3.SerializationUtils;
-
 /*- Prototype pattern is used to work with copies (prototypes)
  *  
  *  There are various way we can do it. Avoid CLONING (suggestion)
@@ -15,11 +13,7 @@ public class Main {
 
 		Book book = new Book("1", "comic", "cacha choudhary", null);
 
-		/*
-		 * Serialization is powerful, doing a round trip will again serialize the whole
-		 * object and return a fresh copy of the object
-		 */
-		Book bookClone = SerializationUtils.roundtrip(book);
+		Book bookClone = book.copy();
 		bookClone.setId("007");
 		bookClone.setAuthor("Lav.. haha!!");
 

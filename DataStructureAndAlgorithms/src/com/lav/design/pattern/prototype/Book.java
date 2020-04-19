@@ -2,6 +2,8 @@ package com.lav.design.pattern.prototype;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang3.SerializationUtils;
+
 /* Serialize the object, so that we can make copies of it later */
 
 public class Book implements Serializable {
@@ -19,6 +21,17 @@ public class Book implements Serializable {
 		this.type = type;
 		this.name = name;
 		this.author = author;
+	}
+
+	/*-
+	 * Serialization is powerful, doing a round trip will again serialize the whole
+	 * object and return a fresh copy of the object.
+	 * 
+	 * NOTE: this will return a deep copy out of the box, don't use clone as that will
+	 * only return shallow copy and we have to handle deep cloning ourselves
+	 */
+	public Book copy() {
+		return SerializationUtils.roundtrip(this);
 	}
 
 	public String getId() {
