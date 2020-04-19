@@ -13,31 +13,35 @@ public class Book {
 		this.type = type;
 	}
 
-	public static Book newInstanceComicBook() {
-		return new Book(BookType.comic);
-	}
-
-	public static Book newInstanceFictionBook() {
-		return new Book(BookType.fiction);
-	}
-
-	public static Book newInstancePsychologicalBook() {
-		return new Book(BookType.psychological);
-	}
-
 	public void printType() {
 		System.out.println("Book Type is: " + type);
 	}
 
+	/* Here is our factory */
+	public static class Factory {
+
+		public static Book newComicBook() {
+			return new Book(BookType.comic);
+		}
+
+		public static Book newFictionBook() {
+			return new Book(BookType.fiction);
+		}
+
+		public static Book newPsychologicalBook() {
+			return new Book(BookType.psychological);
+		}
+	}
+
 	/* EXECUTOR */
 	public static void main(String[] args) {
-		Book comicBook = Book.newInstanceComicBook();
+		Book comicBook = Book.Factory.newComicBook();
 		comicBook.printType();
 
-		Book fictionBook = Book.newInstanceFictionBook();
+		Book fictionBook = Book.Factory.newFictionBook();
 		fictionBook.printType();
 
-		Book pyschologicalBook = Book.newInstancePsychologicalBook();
+		Book pyschologicalBook = Book.Factory.newPsychologicalBook();
 		pyschologicalBook.printType();
 
 	}
