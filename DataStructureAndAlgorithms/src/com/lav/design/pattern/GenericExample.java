@@ -18,7 +18,7 @@ public class GenericExample<T> {
 
 		GenericExample<String> genericString = new GenericExample<>();
 		GenericExample<Integer> genericInteger = new GenericExample<>();
-
+		
 		/*
 		 * Generic are used for type safety as they're checked at compiled time
 		 */

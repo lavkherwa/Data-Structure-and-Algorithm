@@ -51,7 +51,6 @@ public class Builder {
 		}
 	}
 
-	
 	/* EXECUTOR */
 	public static void main(String[] args) {
 		Builder myCastle = new Builder("Castel");
