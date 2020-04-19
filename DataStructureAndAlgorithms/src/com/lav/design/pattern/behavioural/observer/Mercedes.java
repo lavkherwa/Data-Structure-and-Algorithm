@@ -1,13 +1,14 @@
-package com.lav.design.pattern.behavioural.Observer;
+package com.lav.design.pattern.behavioural.observer;
 
-public class Audi {
+public class Mercedes {
 
 	Context context;
 
 	String name;
 	String topSpeed;
 
-	public Audi(Context context) {
+	public Mercedes(Context context) {
+		
 		this.context = context;
 	}
 
@@ -26,9 +27,9 @@ public class Audi {
 	public void setTopSpeed(String topSpeed) {
 		this.topSpeed = topSpeed;
 	}
-
+	
 	public void inspect() {
-		if (name == null || topSpeed == null) {
+		if(name == null || topSpeed == null) {
 			context.setFaulty(this.getClass().getSimpleName().toString() + ": some information is missing");
 		}
 	}
