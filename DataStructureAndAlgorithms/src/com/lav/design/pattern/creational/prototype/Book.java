@@ -6,7 +6,7 @@ import org.apache.commons.lang3.SerializationUtils;
 
 /* Serialize the object, so that we can make copies of it later */
 
-public class Book implements Serializable {
+public class Book implements Serializable, Copyable<Book> {
 
 	private static final long serialVersionUID = -5281576904220291060L;
 
@@ -30,6 +30,7 @@ public class Book implements Serializable {
 	 * NOTE: this will return a deep copy out of the box, don't use clone as that will
 	 * only return shallow copy and we have to handle deep cloning ourselves
 	 */
+	@Override
 	public Book copy() {
 		return SerializationUtils.roundtrip(this);
 	}
@@ -57,7 +58,7 @@ public class Book implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public Author getAuthor() {
 		return author;
 	}
@@ -70,8 +71,5 @@ public class Book implements Serializable {
 	public String toString() {
 		return "Book [id=" + id + ", type=" + type + ", name=" + name + ", author=" + author + "]";
 	}
-
-
-
 
 }
