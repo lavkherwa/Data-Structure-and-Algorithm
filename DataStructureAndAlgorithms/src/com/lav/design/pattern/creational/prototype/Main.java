@@ -11,11 +11,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Book book = new Book("1", "comic", "cacha choudhary", null);
+		Book book = new Book("1", "comic", "cacha choudhary", new Author("lav", "28 June 1989"));
 
 		Book bookClone = book.copy();
 		bookClone.setId("007");
-		bookClone.setAuthor("Lav.. haha!!");
+		bookClone.setAuthor(new Author("kush", "28 June 1989"));
 
 		System.out.println(book);
 		System.out.println(bookClone);

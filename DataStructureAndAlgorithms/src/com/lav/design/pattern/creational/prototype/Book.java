@@ -13,14 +13,14 @@ public class Book implements Serializable {
 	private String id;
 	private String type;
 	private String name;
-	private String author;
+	private Author author;
 
-	public Book(String id, String type, String name, String author) {
+	public Book(String id, String type, String name, Author author) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.name = name;
-		this.author = author;
+		this.setAuthor(author);
 	}
 
 	/*-
@@ -57,12 +57,12 @@ public class Book implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getAuthor() {
+	
+	public Author getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
@@ -70,5 +70,8 @@ public class Book implements Serializable {
 	public String toString() {
 		return "Book [id=" + id + ", type=" + type + ", name=" + name + ", author=" + author + "]";
 	}
+
+
+
 
 }
